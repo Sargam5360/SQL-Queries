@@ -1,0 +1,9 @@
+
+select sum(trans_mstr.trans_amount) from trans_mstr   join wire_mstr  
+where trans_mstr.trans_id = wire_mstr.trans_id and
+wire_mstr.dest_cntry = 'CANADA' and  trans_mstr.trans_yyyymm = 201510    ;
+
+
+
+select branch_id, trans_amount  from trans_mstr where branch_type = 1 
+and trans_yyyymm = 201511 and trans_amount < 100;
