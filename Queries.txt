@@ -23,3 +23,57 @@ INSERT INTO comm_customer_dim values  (1,2233,"sara",20.0,44.0,1222.0,3.0,2000.0
 INSERT INTO comm_customer_dim values  (2,223,"Shah",20.0,44.0,1222.0,3.0,2000.0,14.0,2,"MISSING",0,"","","","",609)
 INSERT INTO comm_customer_dim values  (3,2123,"jENSI",20000.0,44.0,12.0,3.0,20.0,14.0,1,"Savvy Sophisticated",1,"","","","",609)
 INSERT INTO comm_customer_dim values   (4,2123,"Long",000.0,44.0,12.0,3.0,20000.0,14.0,5,"Video Ventures",1,"","","","",609);
+
+
+
+
+---
+CREATE TABLE edw_view (
+    customer_key int,
+    account_nbr  int,
+    customer_nm varchar(255),
+    video_mrc  float,
+    data_mrc float, 
+    voice_mrc float, 
+    transport_mrc float, 
+    total_mrc float, 
+    complex_product_mrc float, 
+    product_count int,
+    e2e_seg_typ varchar(255), 
+    e2e_seg_trigger_flg varchar(255),
+    site_id int
+);
+
+insert into edw_view (customer_key  ,
+    account_nbr   ,
+    customer_nm ,
+    video_mrc   ,
+    data_mrc  , 
+    voice_mrc , 
+    transport_mrc  , 
+    total_mrc  , 
+    complex_product_mrc  , 
+    product_count ,
+    e2e_seg_typ  , 
+    e2e_seg_trigger_flg  ,
+    site_id )
+    
+    select customer_key  ,
+    account_nbr   ,
+    customer_nm ,
+    video_mrc   ,
+    data_mrc  , 
+    voice_mrc , 
+    transport_mrc  , 
+    total_mrc  , 
+    complex_product_mrc  , 
+    product_count ,
+    e2e_seg_typ  , 
+    e2e_seg_trigger_flg  ,
+    site_id 
+    from comm_customer_dim
+
+
+
+
+
