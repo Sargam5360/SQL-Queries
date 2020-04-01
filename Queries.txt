@@ -74,6 +74,20 @@ insert into edw_view (customer_key  ,
     from comm_customer_dim
 
 
+}
+---------------------
 
+create table CB_SGMNT_PRDCT_GRP_XREF (
+product_Line_Desc varchar(80),
+product_Group_Rollup varchar(80),
+included_in_Segment_Rules varchar(80),
+selling_Complexity varchar(80),
+fulfillment_Complexity varchar(80),
+
+strategic_Product varchar(80),
+commissions_Payable varchar(80)
+);
+ 
+ select COUNT(*) from mydb.CB_SGMNT_PRDCT_GRP_XREF;
 
 
